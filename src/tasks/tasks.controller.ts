@@ -5,10 +5,10 @@ import { updateTaskDto } from "./dto/update-task.dto";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 
 @Controller('/tasks')
+@ApiTags('tasks')
 export class TasksController {
     
     constructor(private tasksService:TasksService) {}
-    @ApiTags('tasks')
     @Get()
     @ApiOperation({summary: 'Get all tasks'})
     @ApiResponse({status: 200, description: 'Return all tasks'})
